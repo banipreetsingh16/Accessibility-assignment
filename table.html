@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th scope="col">Department</th>
+                    <th scope="col">Designation</th>
+                    <th scope="col">Salary</th>
+                    <th scope="col">Shift</th>
+                    <th scope="col">Id</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">Banipreet Singh</th>
+                    <td>Python Intern</td>
+                    <td>Developer</td>
+                    <td>30k</td>
+                    <td>Morning</td>
+                    <td>43</td>
+                </tr>
+                <tr>
+                    <th scope="row">Amberjit Singh</th>
+                    <td>Python Intern</td>
+                    <td>Developer</td>
+                    <td>30k</td>
+                    <td>Morning</td>
+                    <td>44</td>
+                </tr>
+                <tr>
+                    <th scope="row">Sukhmeet Singh</th>
+                    <td>Python Intern</td>
+                    <td>Developer</td>
+                    <td>30k</td>
+                    <td>Morning</td>
+                    <td>45</td>
+                </tr>
+                <tr>
+                    <th scope="row">Tanveer Singh</th>
+                    <td>PHP Intern</td>
+                    <td>Developer</td>
+                    <td>30k</td>
+                    <td>Morning</td>
+                    <td>46</td>
+                </tr>
+                <tr>
+                    <th scope="row">Harshit Garg</th>
+                    <td>Java Intern</td>
+                    <td>Developer</td>
+                    <td>30k</td>
+                    <td>Morning</td>
+                    <td>47</td>
+                </tr>
+
+            </tbody>   
+        </table>
+    </div>
+
+
+    <!-- pop-up dialog box, containing a form -->
+  <dialog id="favDialog">
+    <p> Hello and welcome to the dialog box</p>
+    <p>Accessibility concept is important to be used in the websites</p>
+    <p>So that the user with disabilities and those who want to navigate the website through the keyboard can access it.</p>
+    <p> Contact if you have any doubts:</p>
+    <p id="telephone"  aria-label="teli">+(91) 721612718</p>
+    <button id="close" aria-label="close">&times;</button>
+  </dialog>
+  
+  <div>
+    <button id="updateDetails">Read More</button>
+  </div>
+
+</body>
+
+<script>
+      const updateButton = document.getElementById("updateDetails");
+      const cancelButton = document.getElementById("close");
+      const dialog = document.getElementById("favDialog");
+      dialog.returnValue = "favAnimal";
+
+      function openCheck(dialog) {
+        if (dialog.open) {
+        console.log("Dialog open");
+        } else {
+          console.log("Dialog closed");
+        }
+      }
+
+    // Update button opens a modal dialog
+    updateButton.addEventListener("click", () => {
+    dialog.showModal();
+    openCheck(dialog);
+    });
+
+    // Form cancel button closes the dialog box
+    cancelButton.addEventListener("click", () => {
+    dialog.close("animalNotChosen");
+    openCheck(dialog);
+  });
+</script>
+</html>

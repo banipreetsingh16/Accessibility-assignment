@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        window.addEventListener("DOMContentLoaded", (event) => {
+      let buttons = document.querySelectorAll("#accordion button");
+      buttons.forEach((button) => {
+        let content = button.nextElementSibling;
+        button.addEventListener("click", (event) => {
+          if (button.classList.contains("active")) {
+            button.classList.remove("active");
+            button.setAttribute("aria-expanded", false);
+            content.style.maxHeight = null;
+            content.setAttribute("aria-hidden", true);
+          } else {
+            button.classList.add("active");
+            button.setAttribute("aria-expanded", true);
+            content.style.maxHeight = content.scrollHeight + "px";
+            content.setAttribute("aria-hidden", false);
+          }
+        });
+      });
+    });
+    </script>
+</head>
+
+<body>
+    <ul id="accordion">
+        <li>
+          <button aria-controls="content-1" aria-expanded="false" id="accordion-1">About Netsolutions </button>
+          <div class="acc-item-content" aria-hidden="true" id="content-1">
+            <p align="center" >Net Solutions is transforming the identity of the traditional software company. We’re taking the conventional developer “design and build” model and flipping it on its head.</p>
+          </div>
+        </li>
+        <li>
+          <button aria-controls="content-2" aria-expanded="false" id="accordion-2"> 
+            Clients </button>
+          <div class="acc-item-content" aria-hidden="true" id="content-2">
+            <p align="center">Whether as a website development agency or app development agency, Net Solutions has played an integral part in shaping the web presence of some elite brands. </p>
+          </div>
+        </li>
+        <li>
+          <button aria-controls="content-3" aria-expanded="false" id="accordion-3">Experience Design</button>
+          <div class="acc-item-content" aria-hidden="true" id="content-3">
+            <p align="center">Turn your company’s UX into your X-factor with the Net Solutions experience design process. Our people-first philosophy results in finished products that strike the perfect balance of emotion and function, leaving your customers to experience more rewarding interactions with your products and services.</p>
+          </div>
+        </li>
+        <li>
+          <button aria-controls="content-4" aria-expanded="false" id="accordion-4">Digital Commerce </button>
+          <div class="acc-item-content" aria-hidden="true" id="content-4">
+            <p align="center">Elevate the nature of your eCommerce store beyond simply being responsive. Net Solutions can help you design a platform to keep your customers engaged and anticipate their needs.</p>
+          </div>
+        </li>
+        <li>
+          <button aria-controls="content-5" aria-expanded="false" id="accordion-5">Product Development</button>
+          <div class="acc-item-content" aria-hidden="true" id="content-5">
+            <p align="center">Net Solutions is a premier website development agency that can guide you through your product's entire development life cycle. Our goal is to leverage cutting-edge technology to provide you with engaging, fulfilling digital products for your customers. Regardless of the size of your business, we can deliver solutions to help you rejuvenate your existing digital presence.</p>
+          </div>
+        </li>
+      </ul>
+</body>
+
+</html>
